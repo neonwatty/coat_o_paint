@@ -2,7 +2,10 @@
   <nav class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
-        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <div
+          class="absolute inset-y-0 left-0 flex items-center sm:hidden"
+          id="vertical-menu"
+        >
           <!-- Mobile menu button-->
           <button
             type="button"
@@ -66,28 +69,32 @@
               alt="Your Company"
             />
           </div>
-          <div class="hidden sm:ml-6 sm:block">
+          <div id="horizontal-menu" class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a
                 href="/"
                 class="rounded-md bg-gray-700 px-3 py-2 text-sm font-medium text-white active:bg-gray-900 focus:outline-none focus:ring focus:ring-gray-500"
                 aria-current="page"
+                id="home-link-h"
                 >Home</a
               >
               <a
                 href="/search"
                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white active:bg-gray-900 focus:outline-none focus:ring focus:ring-gray-500"
+                id="search-link-h"
                 >Search</a
               >
               <a
                 href="/all_uploads"
                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                id="all-uploads-h"
                 >All uploads</a
               >
               <a
                 href="/new_upload"
                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                id="new-upload-h"
                 >New upload</a
               >
             </div>
@@ -174,21 +181,25 @@
           href="/"
           class="block rounded-md bg-gray-700 px-3 py-2 text-base font-medium text-white active:bg-gray-900 focus:outline-none focus:ring focus:ring-gray-500"
           aria-current="page"
+          id="home-v"
           >Home</a
         >
         <a
           href="/search"
           class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white active:bg-gray-900 focus:outline-none focus:ring focus:ring-gray-500"
+          id="search-v"
           >Search</a
         >
         <a
           href="/all_uploads"
           class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          id="all-uploads-v"
           >All uploads</a
         >
         <a
           href="/new_upload"
           class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          id="new-upload-v"
           >New upload</a
         >
       </div>

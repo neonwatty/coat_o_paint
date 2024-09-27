@@ -4,8 +4,6 @@ setTimeout(() => {
   let ignoreFirstOutsideClick = true;
 
   function profileMenuActions(e) {
-    console.log(e.target);
-    console.log(ignoreFirstOutsideClick);
     if (!ignoreFirstOutsideClick) {
       if (!profileMenu.classList.contains("hidden")) {
         if (!profileMenu.contains(e.target)) {
@@ -24,8 +22,6 @@ setTimeout(() => {
   }
 
   function toggleProfileMenu(e) {
-    console.log(`ignoreFirstOutsideClick ${ignoreFirstOutsideClick}`);
-    console.log(e.target);
     toggler();
     if (!profileMenu.classList.contains("hidden")) {
       ignoreFirstOutsideClick = true;
