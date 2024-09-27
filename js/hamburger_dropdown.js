@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
             toggler();
           } else {
             console.log("clicking in menu");
+            console.log(e.target);
+            toggler();
           }
         }
       }
