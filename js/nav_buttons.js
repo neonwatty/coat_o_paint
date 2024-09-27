@@ -3,11 +3,9 @@ setTimeout(() => {
   const horizontalMenu = document.querySelector("#horizontal-menu");
 
   function setActive(activeLinkId) {
-    console.log(`link ${activeLinkId}`);
     const links = document.querySelectorAll(
       "#vertical-menu a, #horizontal-menu a"
     );
-    console.log(links);
     links.forEach((link) => {
       if (
         activeLinkId !== null &&
@@ -15,21 +13,29 @@ setTimeout(() => {
         link.id === activeLinkId
       ) {
         link.classList.add("bg-gray-700"); // Active color
-        link.classList.remove("bg-gray-900"); // Remove default color
       } else {
         link.classList.remove("bg-gray-700"); // Reset active color
-        link.classList.add("bg-gray-900"); // Default color
       }
     });
   }
 
-  // Add click event listeners to all links in one line
-  document
-    .querySelectorAll("#vertical-menu a, #horizontal-menu a")
-    .forEach((link) => {
-      link.addEventListener("click", (event) => {
-        event.preventDefault(); // Prevent the default anchor link behavior
-        setActive(link.id);
-      });
-    });
-}, 500);
+  const currentPath = window.location.pathname;
+  const lastPart = currentPath.substring(currentPath.lastIndexOf("/") + 1);
+  const lastPartWithoutExtension = lastPart.split(".")[0]; // Remove extension
+  switch (lastPartWithoutExtension) {
+    case "index":
+      setActive("home-h");
+      break;
+    case "search":
+      setActive("search-h");
+      break;
+    case "new_upload":
+      setActive("new-upload-h");
+      break;
+    case "all_uploads":
+      setActive("all-uploads-h");
+      break;
+    case null:
+      setActive("default-h"); // Add your default case here
+  }
+}, 300);
