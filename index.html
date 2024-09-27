@@ -8,30 +8,16 @@
     <title>Main Page</title>
   </head>
   <body>
-    <!-- HTML structure -->
-    <div id="b-html"></div>
-    <div id="c-html"></div>
-
-    <!-- Call the function -->
-    <!-- Place scripts here -->
+    <div id="nav-placeholder"></div>
+    <div id="newsletter-signup-placeholder"></div>
+    <script src="js/partials.js"></script>
     <script>
-      function loadHTML(filePath, containerId) {
-        fetch(filePath)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-            return response.text();
-          })
-          .then((data) => {
-            document.getElementById(containerId).innerHTML = data;
-          })
-          .catch((error) => console.error("Error loading the partial:", error));
-      }
-
-      // Call the function
-      loadHTML("b.html", "b-html");
-      loadHTML("c.html", "c-html");
+      loadHTML("partials/nav.html", "nav-placeholder");
+      loadHTML(
+        "partials/newsletter_section.html",
+        "newsletter-signup-placeholder"
+      );
     </script>
+    <script src="js/dropdown.js"></script>
   </body>
 </html>
