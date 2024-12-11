@@ -3,13 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class'
-      }
-    </script>
+    <link href="./dist/styles.css" rel="stylesheet">
     <style>
       .toggle-checkbox:checked {
         right: 0;
@@ -23,21 +17,18 @@
     <title>Main Page</title>
   </head>
   <body class="bg-white dark:bg-slate-800"">
+    <script src="src/js/partials.js"></script>
+    <script src="src/js/hamburger_dropdown.js"></script>
+    <script src="src/js/utilities.js"></script>
 
+    <!-- navbar placeholder -->
     <div id="nav-placeholder"></div>
-       
-    <div id="newsletter-signup-placeholder"></div>
-    <script src="js/partials.js"></script>
+
+    <!-- partial placeholder -->
+    <div id="partial-placeholder"></div>
     <script>
-      loadHTML("partials/nav.html", "nav-placeholder");
-      loadHTML(
-        "partials/newsletter_section.html",
-        "newsletter-signup-placeholder"
-      );
+      loadHTML("src/partials/nav.html", "nav-placeholder");
     </script>
-    <script src="js/hamburger_dropdown.js"></script>
-    <script src="js/profile_dropdown.js"></script>
-    <script src="js/nav_buttons.js"></script>
     <script>
         setTimeout(() => {
         const toggleCheckbox = document.getElementById('toggle');
@@ -47,6 +38,19 @@
           });
         }
       },500)  
+      document.addEventListener("DOMContentLoaded", () => {
+          // retrieve index on first load
+          loadHTML('src/partials/index.html', 'partial-placeholder'); 
+          setTimeout(() => {
+              // get menu elements
+              const isMobile = /Mobi|Android/i.test(navigator.userAgent); // Simple check for mobile devices
+              if (isMobile) {
+                  setActive('home-v');
+              }else {
+                setActive('home-h')
+              }
+          },100)
+      });
     </script>
   </body>
 </html>
