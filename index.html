@@ -17,21 +17,18 @@
     <title>Main Page</title>
   </head>
   <body class="bg-white dark:bg-slate-800"">
+    <script src="src/js/partials.js"></script>
+    <script src="src/js/hamburger_dropdown.js"></script>
+    <script src="src/js/utilities.js"></script>
+
     <!-- navbar placeholder -->
     <div id="nav-placeholder"></div>
 
     <!-- partial placeholder -->
     <div id="partial-placeholder"></div>
-
-
-    <div id="newsletter-signup-placeholder"></div>
-    <script src="src/js/partials.js"></script>
     <script>
       loadHTML("src/partials/nav.html", "nav-placeholder");
     </script>
-    <script src="src/js/hamburger_dropdown.js"></script>
-    <script src="src/js/profile_dropdown.js"></script>
-    <script src="src/js/utilities.js"></script>
     <script>
         setTimeout(() => {
         const toggleCheckbox = document.getElementById('toggle');
@@ -42,10 +39,17 @@
         }
       },500)  
       document.addEventListener("DOMContentLoaded", () => {
+          // retrieve index on first load
           loadHTML('src/partials/index.html', 'partial-placeholder'); 
           setTimeout(() => {
-          setActive('home-h');
-          },10)
+              // get menu elements
+              const isMobile = /Mobi|Android/i.test(navigator.userAgent); // Simple check for mobile devices
+              if (isMobile) {
+                  setActive('home-v');
+              }else {
+                setActive('home-h')
+              }
+          },100)
       });
     </script>
   </body>

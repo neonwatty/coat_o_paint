@@ -69,7 +69,7 @@
               alt="Your Company"
             />
           </div>
-          <div id="horizontal-menu" class="hidden sm:ml-6 sm:block">
+          <div id="full-menu" class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a
@@ -100,76 +100,7 @@
             </div>
           </div>
         </div>
-        <div
-          class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
-          id="profile-div"
-        >
-          <!-- Profile dropdown -->
-          <div class="relative ml-3">
-            <div>
-              <button
-                type="button"
-                class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                id="user-menu-button"
-                aria-expanded="false"
-                aria-haspopup="true"
-              >
-                <span class="absolute -inset-1.5"></span>
-                <span class="sr-only">Open user menu</span>
-                <img
-                  class="h-8 w-8 rounded-full"
-                  src="https://github.com/neonwatty/pittsy/blob/main/app/assets/images/avatars/avatar_1.png?raw=true"
-                  alt=""
-                />
-              </button>
-            </div>
 
-            <!--
-            Dropdown menu, show/hide based on menu state.
-
-            Entering: "transition ease-out duration-100"
-              From: "transform opacity-0 scale-95"
-              To: "transform opacity-100 scale-100"
-            Leaving: "transition ease-in duration-75"
-              From: "transform opacity-100 scale-100"
-              To: "transform opacity-0 scale-95"
-          -->
-            <div
-              class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white dark:bg-slate-800 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-              role="menu"
-              aria-orientation="vertical"
-              aria-labelledby="user-menu-button"
-              tabindex="-1"
-              id="profile-menu"
-            >
-              <!-- Active: "bg-gray-100", Not Active: "" -->
-              <a
-                href="#"
-                class="block px-4 py-2 text-sm text-gray-700 dark:bg-white"
-                role="menuitem"
-                tabindex="-1"
-                id="user-menu-item-0"
-                >Your Profile</a
-              >
-              <a
-                href="#"
-                class="block px-4 py-2 text-sm text-gray-700 dark:bg-white"
-                role="menuitem"
-                tabindex="-1"
-                id="user-menu-item-1"
-                >Settings</a
-              >
-              <a
-                href="#"
-                class="block px-4 py-2 text-sm text-gray-700 dark:bg-white"
-                role="menuitem"
-                tabindex="-1"
-                id="user-menu-item-2"
-                >Sign out</a
-              >
-            </div>
-          </div>
-        </div>
         <div
           class="ml-14 mt-2 relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in"
         >
@@ -193,28 +124,28 @@
       <div class="space-y-1 px-2 pb-3 pt-2">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         <a
-          href="index.html"
           class="block rounded-md bg-gray-700 px-3 py-2 text-base font-medium text-white active:bg-gray-900 focus:outline-none focus:ring focus:ring-gray-500"
           aria-current="page"
           id="home-v"
+          onclick="loadHTML('src/partials/index.html', 'partial-placeholder'); setActive('home-v');"
           >Home</a
         >
         <a
-          href="search.html"
           class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white active:bg-gray-900 focus:outline-none focus:ring focus:ring-gray-500"
           id="search-v"
+          onclick="loadHTML('src/partials/search.html', 'partial-placeholder'); setActive('search-v');"
           >Search</a
         >
         <a
-          href="all_uploads.html"
           class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          id="all-uploads-v"
+          id="uploads-v"
+          onclick="loadHTML('src/partials/uploads.html', 'partial-placeholder'); setActive('uploads-v');"
           >All uploads</a
         >
         <a
-          href="new_upload.html"
           class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          id="new-upload-v"
+          id="new-v"
+          onclick="loadHTML('src/partials/new.html', 'partial-placeholder'); setActive('home-v');"
           >New upload</a
         >
       </div>

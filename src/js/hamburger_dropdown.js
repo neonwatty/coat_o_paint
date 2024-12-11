@@ -16,10 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!ignoreFirstOutsideClick) {
         if (!mobileMenu.classList.contains("hidden")) {
           if (!mobileMenu.contains(e.target)) {
-            console.log("clicking outside of menu");
             toggler();
           } else {
-            console.log("clicking in menu");
             toggler();
           }
         }
@@ -28,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function toggleMobileMenu(e) {
-      console.log("hamburger menu clicked");
       toggler();
       if (!mobileMenu.classList.contains("hidden")) {
         ignoreFirstOutsideClick = true;

@@ -1,7 +1,5 @@
 function setActive(activeLinkId) {
-  const links = document.querySelectorAll(
-    "#vertical-menu a, #horizontal-menu a"
-  );
+  const links = document.querySelectorAll("#full-menu a, #mobile-menu a");
   links.forEach((link) => {
     if (activeLinkId !== null && link.id !== null && link.id === activeLinkId) {
       link.classList.add("bg-gray-700"); // Active color
