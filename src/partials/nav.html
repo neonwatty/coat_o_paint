@@ -76,25 +76,25 @@
                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white active:bg-gray-900 focus:outline-none focus:ring focus:ring-gray-500"
                 aria-current="page"
                 id="home-h"
-                onclick="loadHTML('src/partials/index.html', 'partial-placeholder');"
+                onclick="loadHTML('src/partials/index.html', 'partial-placeholder'); setActive('home-h');"
                 >Home</a
               >
               <a
                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white active:bg-gray-900 focus:outline-none focus:ring focus:ring-gray-500"
                 id="search-h"
-                onclick="loadHTML('src/partials/search.html', 'partial-placeholder');"
+                onclick="loadHTML('src/partials/search.html', 'partial-placeholder'); setActive('search-h');"
                 >Search</a
               >
               <a
                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                id="all-uploads-h"
-                onclick="loadHTML('src/partials/uploads.html', 'partial-placeholder');"
+                id="uploads-h"
+                onclick="loadHTML('src/partials/uploads.html', 'partial-placeholder'); setActive('uploads-h');"
                 >All uploads</a
               >
               <a
                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                id="new-upload-h"
-                onclick="loadHTML('src/partials/new.html', 'partial-placeholder');"
+                id="new-h"
+                onclick="loadHTML('src/partials/new.html', 'partial-placeholder'); setActive('new-h');"
                 >New upload</a
               >
             </div>
