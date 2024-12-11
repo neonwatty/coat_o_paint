@@ -1,5 +1,5 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+# Simple workflow for building and deploying a Node.js-based Tailwind page to GitHub Pages
+name: Build and Deploy Tailwind Page
 
 on:
   # Runs on pushes targeting the default branch
@@ -22,22 +22,45 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  # Single job to build and deploy
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      # Checkout the repository
+      - name: Checkout code
         uses: actions/checkout@v4
+
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22.10.0"
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          npm install
+
+      # Build the project - make sure to have build step in package.json
+      - name: Build the project
+        run: |
+          npm run build
+
+      # Setup GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
+      # Upload the built artifact to GitHub Pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: "./dist" # Adjust to your build output directory (e.g., 'dist', 'public', etc.)
+
+      # Deploy the build to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
