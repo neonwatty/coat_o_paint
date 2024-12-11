@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
+    "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify && cp ./index.html ./dist/index.html && cp -r ./src ./dist/src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
