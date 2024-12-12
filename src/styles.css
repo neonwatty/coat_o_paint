@@ -6,11 +6,16 @@ a {
   @apply cursor-pointer;
 }
 
-.toggle-checkbox:checked {
-  right: 0;
-  border-color: #68d391;
+.toggle-label {
+  background: #e2e8f0; /* Light gray background */
 }
 
+.toggle-checkbox:checked {
+  right: 0;
+  border-color: #68d391; /* Green border when checked */
+}
+
+/* When checked */
 .toggle-checkbox:checked + .toggle-label {
-  background: #68d391;
+  background: #68d391; /* Green background when checked */
 }
