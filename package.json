@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify && cp ./index.html ./dist/index.html && sed -i '' 's|href=\"dist/styles.css\"|href=\"styles.css\"|' ./dist/index.html && rm -r ./dist/src && cp -r ./src ./dist/src",
+    "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify && cp ./index.html ./dist/index.html && sed -i'.bak' 's|href=\"dist/styles.css\"|href=\"styles.css\"|' ./dist/index.html && rm -r ./dist/src && cp -r ./src ./dist/src && rm ./dist/index.html.bak",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
